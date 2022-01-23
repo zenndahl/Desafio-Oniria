@@ -68,6 +68,10 @@ public class Liftoff : MonoBehaviour
             countdownTimerText.text = string.Format("{0:00.00}", countdownTimer);
         }
 
+        // if(launch){
+        //     target.transform.Translate(-Vector3.left * Time.deltaTime);
+        // }
+
         if(countdownTimer <= 0)
             countdownTimerText.gameObject.SetActive(false);
 
@@ -78,7 +82,7 @@ public class Liftoff : MonoBehaviour
 
         //adding force to the rocket for 5 seconds
         if(launch && propulsionTime > 0){
-            rigidBody.AddForce(Vector3.up * propulsion--);
+            rigidBody.AddForce(Vector3.up * propulsion);
             rigidBody.AddForce(Vector3.left * acceleration);
 
             
@@ -93,10 +97,10 @@ public class Liftoff : MonoBehaviour
             propulsionTime = 0;
         }
 
-        if(launch && !detached){
-            Quaternion toRotation = Quaternion.LookRotation(target.transform.position - transform.position, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-        }           
+        // if(launch && !detached){
+        //     Quaternion toRotation = Quaternion.LookRotation(target.transform.position - transform.position, Vector3.up);
+        //     transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        // }           
 
         //countdown for detaching
         if(detachCountdown <= 0 && !detached && launch){
@@ -115,7 +119,7 @@ public class Liftoff : MonoBehaviour
         propulsionSound.Play(0);
         yield return new WaitForSeconds(5f);
         propulsionBlastSound.Play(0);
-        rigidBody.AddForce(Vector3.up * (propulsion));
+        rigidBody.AddForce(Vector3.up * (propulsion*3));
         launch = true;
         //propulsionFire.SetActive(true);
     }

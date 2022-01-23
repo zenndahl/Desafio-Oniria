@@ -56,11 +56,6 @@ public class SecondStage : MonoBehaviour
         }
 
         if(openParachute && !landed){
-            Quaternion toRotation = Quaternion.LookRotation(Vector3.down, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-
-        }
-        else if(launch){
             Quaternion toRotation = Quaternion.LookRotation(target.transform.position - transform.position, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }

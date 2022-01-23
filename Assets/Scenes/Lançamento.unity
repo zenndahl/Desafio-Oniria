@@ -15535,8 +15535,8 @@ MonoBehaviour:
   propulsionBlastSound: {fileID: 1567581232}
   initiateLaunchText: {fileID: 1457838590}
   countdownTimerText: {fileID: 1797905452}
-  propulsion: 150
-  acceleration: 5
+  propulsion: 50
+  acceleration: 10
   propulsionTimeTotal: 5
   detachCountdown: 5
   launch: 0
@@ -15555,7 +15555,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 1
 --- !u!65 &1567581230
 BoxCollider:
@@ -15851,7 +15851,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630874546}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -400, y: 1, z: 0}
+  m_LocalPosition: {x: -1000, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -16400,7 +16400,7 @@ MonoBehaviour:
   propulsionSound: {fileID: 1968923757}
   maxHeightText: {fileID: 1079196188}
   propulsion: 15
-  rotationSpeed: 10
+  rotationSpeed: 50
   propulsionTotal: 5
   parachuteDrag: 1
   maxHeight: 0
