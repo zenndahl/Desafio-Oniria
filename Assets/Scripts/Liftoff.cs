@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Threading;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Globalization;
 using TMPro;
 
@@ -53,6 +54,10 @@ public class Liftoff : MonoBehaviour
             initiateLaunchText.gameObject.SetActive(false);
             StartCoroutine(Countdown());
             SetAnimations();
+        }
+
+        if(Input.GetKeyDown(KeyCode.P)){
+            SceneManager.LoadScene("Lançamento");
         }
 
         //update the timer UI
@@ -110,7 +115,7 @@ public class Liftoff : MonoBehaviour
         propulsionSound.Play(0);
         yield return new WaitForSeconds(5f);
         propulsionBlastSound.Play(0);
-        rigidBody.AddForce(Vector3.up * (propulsion+5));
+        rigidBody.AddForce(Vector3.up * (propulsion));
         launch = true;
         //propulsionFire.SetActive(true);
     }
